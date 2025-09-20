@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TextShowcase from "./components/session-1/TextShowcase";
-import ButtonShowcase from "./components/session-2/ButtonShowcase";
+import ButtonShowcase from "./components/session-3/ButtonShowcase";
 import DivShowcase from "./components/session-2/DivShowcase";
 
 const pages = [
