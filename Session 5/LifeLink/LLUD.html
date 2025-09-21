@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User Dashboard • LifeLink</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --coral: #f88379;
+        --coral-600: #e56d63;
+        --coral-100: #fde9e7;
+      }
+      body {
+        background-color: #fafafa;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen p-4 sm:p-8">
+    <!-- User Dashboard Header -->
+    <header
+      class="w-full bg-white shadow-md rounded-xl px-4 sm:px-6 py-4 sm:py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 sm:mb-8 gap-2"
+    >
+      <!-- Left: Title -->
+      <div>
+        <h1 class="text-xl sm:text-2xl font-semibold text-gray-800">
+          User Dashboard
+        </h1>
+        <p class="text-sm text-gray-500">Welcome back, User Name</p>
+      </div>
+    </header>
+
+    <!-- Main Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+      <!-- Left Sidebar (1/4 on large screens, full width on small) -->
+      <aside
+        class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center lg:col-span-1"
+      >
+        <!-- Profile Image with Badge -->
+        <div class="relative mb-4">
+          <img
+            src="LifeLinkL1.png"
+            alt="LifeLink Logo"
+            class="w-28 h-28 rounded-lg border-4 p-1 border-[var(--coral)] shadow-sm mx-auto"
+          />
+          <!-- Heart Badge -->
+          <span
+            class="absolute bottom-1 right-1 bg-white rounded-full p-1 shadow"
+          >
+            <svg
+              class="w-6 h-6 text-[var(--coral)]"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m12.75 20.66 6.184-7.098c2.677-2.884 2.559-6.506.754-8.705-.898-1.095-2.206-1.816-3.72-1.855-1.293-.034-2.652.43-3.963 1.442-1.315-1.012-2.678-1.476-3.973-1.442-1.515.04-2.825.76-3.724 1.855-1.806 2.201-1.915 5.823.772 8.706l6.183 7.097c.19.216.46.34.743.34a.985.985 0 0 0 .743-.34Z"
+              />
+            </svg>
+          </span>
+        </div>
+
+        <!-- User Details -->
+        <h2 class="text-lg sm:text-xl font-semibold text-gray-800 pb-2">
+          User Name
+        </h2>
+
+        <div
+          class="space-y-2 text-sm sm:text-base text-gray-700 w-full text-left"
+        >
+          <p><span class="font-medium">Phone:</span> +91 9876543210</p>
+          <p><span class="font-medium">Location:</span> Mumbai, India</p>
+          <p><span class="font-medium">Blood Group:</span> O+</p>
+          <p><span class="font-medium">Gender:</span> Male</p>
+          <p><span class="font-medium">Age:</span> 29</p>
+        </div>
+      </aside>
+
+      <!-- Right Content (3/4 on large screens, full width on small) -->
+      <section
+        class="bg-white rounded-xl shadow-md p-6 lg:col-span-3 overflow-x-auto"
+      >
+        <h2 class="text-lg sm:text-xl font-semibold text-gray-800 mb-4">
+          Request History
+        </h2>
+
+        <!-- History Table -->
+        <div class="overflow-x-auto">
+          <table
+            class="min-w-full border-collapse text-sm sm:text-base text-gray-700"
+          >
+            <thead>
+              <tr class="bg-[var(--coral-100)] text-gray-800">
+                <th class="px-3 sm:px-4 py-2 text-left">#</th>
+                <th class="px-3 sm:px-4 py-2 text-left">Date</th>
+                <th class="px-3 sm:px-4 py-2 text-left">Blood Group</th>
+                <th class="px-3 sm:px-4 py-2 text-left">Units</th>
+                <th class="px-3 sm:px-4 py-2 text-left">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b">
+                <td class="px-3 sm:px-4 py-2">1</td>
+                <td class="px-3 sm:px-4 py-2">10 Sep 2025</td>
+                <td class="px-3 sm:px-4 py-2">O+</td>
+                <td class="px-3 sm:px-4 py-2">2</td>
+                <td class="px-3 sm:px-4 py-2 text-green-600 font-medium">
+                  Approved
+                </td>
+              </tr>
+              <tr class="border-b">
+                <td class="px-3 sm:px-4 py-2">2</td>
+                <td class="px-3 sm:px-4 py-2">22 Aug 2025</td>
+                <td class="px-3 sm:px-4 py-2">B+</td>
+                <td class="px-3 sm:px-4 py-2">1</td>
+                <td class="px-3 sm:px-4 py-2 text-yellow-600 font-medium">
+                  Pending
+                </td>
+              </tr>
+              <tr>
+                <td class="px-3 sm:px-4 py-2">3</td>
+                <td class="px-3 sm:px-4 py-2">05 Jul 2025</td>
+                <td class="px-3 sm:px-4 py-2">A-</td>
+                <td class="px-3 sm:px-4 py-2">3</td>
+                <td class="px-3 sm:px-4 py-2 text-red-600 font-medium">
+                  Rejected
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

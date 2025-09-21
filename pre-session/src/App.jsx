@@ -1,44 +1,33 @@
-import React, { useState } from "react";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import Home from "./components/session-4/Home";
+import Projects from "./components/session-4/Projects";
+import Navbar from "./components/session-4/Navbar";
 import TextShowcase from "./components/session-1/TextShowcase";
-import DivShowcase from "./components/session-1/DivShowcase";
-import ButtonShowcase from "./components/session-1/ButtonShowcase";
-import ButtonGroupsShowcase from "./components/session-1/ButtonGroupsShowcase";
+import DivShowcase from "./components/session-2/DivShowcase";
+import ButtonShowcase from "./components/session-3/ButtonShowcase";
 
-const pages = [
-  { label: "Text", component: <TextShowcase /> },
-  { label: "Div", component: <DivShowcase /> },
-  { label: "Button", component: <ButtonShowcase /> },
-  { label: "BtnGrp", component: <ButtonGroupsShowcase /> },
-];
-
-const App = () => {
-  const [active, setActive] = useState(pages[0].label);
-
-  return (
-    <div className="min-h-screen">
-      {/* Menu */}
-      <nav className="bg-green-600 text-white p-3 flex gap-3">
-        {pages.map((p) => (
-          <button
-            key={p.label}
-            onClick={() => setActive(p.label)}
-            className={`px-3 py-1 rounded ${
-              active === p.label
-                ? "bg-white text-green-600"
-                : "hover:bg-green-700"
-            }`}
-          >
-            {p.label}
-          </button>
-        ))}
-      </nav>
-
-      {/* Active Page */}
-      <main className="p-6">
-        {pages.find((p) => p.label === active)?.component}
-      </main>
+const Footer = () => (
+  <footer className="border-t">
+    <div className="max-w-6xl mx-auto px-4 py-6 text-sm text-gray-500">
+      © {new Date().getFullYear()} KS • Built with React + Tailwind
     </div>
-  );
-};
+  </footer>
+);
 
-export default App;
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <main className="min-h-[70vh]">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/TextSC" element={<TextShowcase />} />
+          <Route path="/DivSC" element={<DivShowcase />} />
+          <Route path="/BtnSC" element={<ButtonShowcase />} />
+        </Routes>
+      </main>
+      <Footer />
+    </BrowserRouter>
+  );
+}
